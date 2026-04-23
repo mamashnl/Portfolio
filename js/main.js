@@ -215,64 +215,23 @@
             });
         });
 
-        // ===== TESTIMONIALS SLIDER =====
-        const testimonialTrack = document.getElementById('testimonialTrack');
-        const testimonialDots = document.querySelectorAll('.testimonial-dot');
-        let currentTestimonial = 0;
-        let testimonialInterval;
-
-        function goToTestimonial(index) {
-            currentTestimonial = index;
-            testimonialTrack.style.transform = `translateX(-${index * 100}%)`;
-            testimonialDots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === index);
-            });
-        }
-
-        testimonialDots.forEach(dot => {
-            dot.addEventListener('click', () => {
-                goToTestimonial(parseInt(dot.dataset.index));
-                resetTestimonialInterval();
-            });
-        });
-
-        function autoSlideTestimonial() {
-            testimonialInterval = setInterval(() => {
-                currentTestimonial = (currentTestimonial + 1) % 3;
-                goToTestimonial(currentTestimonial);
-            }, 5000);
-        }
-
-        function resetTestimonialInterval() {
-            clearInterval(testimonialInterval);
-            autoSlideTestimonial();
-        }
-
-        autoSlideTestimonial();
-
         // ===== CONTACT FORM =====
-        const contactForm = document.getElementById('contactForm');
-        const toast = document.getElementById('toast');
+        function sendToWhatsApp() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const subject = document.getElementById("subject").value;
+            const message = document.getElementById("message").value;
 
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
+            const phoneNumber = "6285156820510"; // GANTI NOMOR LU
 
-            const submitBtn = contactForm.querySelector('.form-submit');
-            submitBtn.textContent = 'Mengirim...';
-            submitBtn.disabled = true;
+            const text = `Halo, saya ${name}%0AEmail: ${email}%0ASubjek: ${subject}%0APesan: ${message}`;
 
-            setTimeout(() => {
-                submitBtn.textContent = 'Kirim Pesan →';
-                submitBtn.disabled = false;
-                contactForm.reset();
+            const url = `https://wa.me/${phoneNumber}?text=${text}`;
 
-                toast.classList.add('show');
-                setTimeout(() => {
-                    toast.classList.remove('show');
-                }, 3000);
-            }, 1500);
-        });
+            window.open(url, "_blank");
+        }
 
+        
         // ===== SMOOTH SCROLL FOR NAV LINKS =====
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {

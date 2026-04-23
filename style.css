@@ -332,7 +332,7 @@
             order: 1;
         }
 
-        .hero-bg-layer {
+        .hero-gradient-orb {
             position: absolute;
             top: 0;
             left: 0;
@@ -386,12 +386,6 @@
                 linear-gradient(90deg, rgba(108, 99, 255, 0.03) 1px, transparent 1px);
             background-size: 60px 60px;
             z-index: 0;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
         }
 
         .hero-badge {
