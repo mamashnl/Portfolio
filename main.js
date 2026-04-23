@@ -1,10 +1,3 @@
-        // ===== LOADER =====
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.getElementById('loader').classList.add('hidden');
-            }, 1500);
-        });
-
         // ===== CUSTOM CURSOR =====
         const cursorDot = document.getElementById('cursorDot');
         const cursorRing = document.getElementById('cursorRing');
@@ -214,6 +207,41 @@
                 });
             });
         });
+
+        // ===== TESTIMONIALS SLIDER =====
+        const testimonialTrack = document.getElementById('testimonialTrack');
+        const testimonialDots = document.querySelectorAll('.testimonial-dot');
+        let currentTestimonial = 0;
+        let testimonialInterval;
+
+        function goToTestimonial(index) {
+            currentTestimonial = index;
+            testimonialTrack.style.transform = `translateX(-${index * 100}%)`;
+            testimonialDots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+
+        testimonialDots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                goToTestimonial(parseInt(dot.dataset.index));
+                resetTestimonialInterval();
+            });
+        });
+
+        function autoSlideTestimonial() {
+            testimonialInterval = setInterval(() => {
+                currentTestimonial = (currentTestimonial + 1) % 3;
+                goToTestimonial(currentTestimonial);
+            }, 5000);
+        }
+
+        function resetTestimonialInterval() {
+            clearInterval(testimonialInterval);
+            autoSlideTestimonial();
+        }
+
+        autoSlideTestimonial();
 
         // ===== CONTACT FORM =====
         const contactForm = document.getElementById('contactForm');

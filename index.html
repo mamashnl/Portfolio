@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Web Developer Profesional</title>
+    <title>Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/fontsource-inter@5.0.18/index.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/fontsource-fira-code@5.0.19/index.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -609,6 +609,44 @@
         </div>
     </section>
 
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="section-header reveal">
+            <span class="section-tag">// Testimoni</span>
+            <h2 class="section-title">Apa Kata Klien</h2>
+            <p class="section-desc">Feedback dari klien yang telah bekerja sama dengan saya</p>
+            <div class="section-divider"></div>
+        </div>
+
+        <div class="testimonials-slider reveal">
+            <div class="testimonial-track" id="testimonialTrack">
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">Hasil kerjanya sangat luar biasa! Website yang dibuat sangat responsif, cepat, dan desainnya modern. Sangat merekomendasikan jasa pengembangan web ini.</p>
+                    <div class="testimonial-author">Ahmad Rizki</div>
+                    <div class="testimonial-role">CEO, PT Digital Nusantara</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">Profesional, tepat waktu, dan komunikatif. Aplikasi yang dikembangkan sesuai dengan kebutuhan bisnis kami. Tim kami sangat puas dengan hasilnya.</p>
+                    <div class="testimonial-author">Sarah Putri</div>
+                    <div class="testimonial-role">Product Manager, StartupXYZ</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">Kolaborasi yang sangat menyenangkan. Developer ini memahami kebutuhan kami dengan baik dan memberikan solusi yang kreatif dan efektif.</p>
+                    <div class="testimonial-author">Budi Santoso</div>
+                    <div class="testimonial-role">CTO, TechVenture</div>
+                </div>
+            </div>
+            <div class="testimonial-dots" id="testimonialDots">
+                <div class="testimonial-dot active" data-index="0"></div>
+                <div class="testimonial-dot" data-index="1"></div>
+                <div class="testimonial-dot" data-index="2"></div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="section-header reveal">
@@ -708,7 +746,15 @@
         <span class="toast-icon">✅</span>
         <span>Pesan berhasil dikirim!</span>
     </div>
-    <script src="main.js"></script>
+
+    <script>
+        // ===== LOADER =====
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hidden');
+            }, 1500);
+        });
+    </script>
 </body>
 </html>
 
