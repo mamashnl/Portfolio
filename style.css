@@ -320,6 +320,8 @@
             position: relative;
             z-index: 2;
             max-width: 900px;
+            width: 50%;
+            align-content: flex-start;
             order: 2;
         }
 
@@ -1578,6 +1580,10 @@
 
         /* Responsive */
         @media (min-width: 767px) {
+            .hero {
+                align-items: flex-start;
+                padding-top: 120px;
+            }
             .hero-content {
                 width: 50%;
             }
@@ -1602,7 +1608,7 @@
             }
             .hero-content {
                 width: 100%;
-                text-align: center;
+                text-align: left;
                 order: 2;
             }
         }
@@ -1618,9 +1624,14 @@
                 margin: 0 auto 30px auto;
                 order: 1;
             }
+            .hero-image-wrapper {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 1;
+            }
             .hero-content {
                 width: 100%;
-                text-align: center;
+                text-align: left;
                 order: 2;
             }
         }
